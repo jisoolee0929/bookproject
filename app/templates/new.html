@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="input">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">제목</label>
+        <input  id = "title" type="text" name="title" placeholder="title">
+        <label for="content">내용</label>
+        <input id = "content" type="text" name = "content" placeholder="content">
+        <label for="cover">정면 이미지</label>
+        <input id = "cover" type="file" name ="cover" placeholder="cover">
+        <label for="back">후면 이미지</label>
+        <input id = "back" type="file" name ="back" placeholder="back">
+        <button>제출하기</button>
+    </form>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bar">
+        <h1>📚My libary</h1>
+        <a href="{% url 'home'  %}">홈으로</a>
+    </div>
+    <div class="box">
+        <form method="POST">
+            {% csrf_token %}
+            {% if error %}
+            <p>{{ error }}</p>
+            {% endif %}
+            <input type="text" name="username" placeholder="id">
+            <input type="text" name = "password" placeholder="password">
+            <button>회원가입</button>
+        </form>
+    </div>
+    
+</body>
+</html>
